@@ -1,0 +1,297 @@
+---
+const projects = [
+  {
+    id: "ai-resume-builder",
+    title: "AI Resume Builder",
+    category: "Full-Stack & AI",
+    type: "Professional & Full-Stack",
+    isFeatured: true,
+    description: "A full-stack AI-powered web application that generates professional, tailored resume content dynamically using Google's Gemini AI. Features user authentication with Clerk, persistent data storage via Strapi CMS, and a clean, responsive React interface.",
+    highlights: [
+      "Integrated Gemini AI API for intelligent text generation and section optimization.",
+      "Implemented Clerk authentication for secure user onboarding and profile management.",
+      "Configured Strapi CMS backend for structured content management and API endpoints.",
+      "Designed responsive form workflows with real-time live preview rendering."
+    ],
+    stack: ["React.js", "Gemini AI API", "Clerk Auth", "Strapi CMS", "Tailwind CSS"],
+    githubUrl: "https://github.com/AshwiniVapilkar/AI-RESUME-BUILDER",
+    liveDemoUrl: null,
+    uiPreviewType: "resume-preview"
+  },
+  {
+    id: "weather-app",
+    title: "Weather Application",
+    category: "Frontend Web App",
+    type: "Frontend Web Application",
+    isFeatured: false,
+    description: "A responsive React.js weather application built with the OpenWeatherMap REST API. Displays real-time weather metrics, multi-day forecasts, and features a dynamic UI that adjusts color schemes and graphics based on weather conditions.",
+    highlights: [
+      "Fetched and parsed live meteorological data from OpenWeatherMap REST API.",
+      "Built dynamic theme adapters responding to rain, sunshine, cloud cover, and night cycles.",
+      "Created modular component architecture with reusable forecast cards and metric gauges."
+    ],
+    stack: ["React.js", "OpenWeatherMap API", "JavaScript ES6+", "Tailwind CSS"],
+    githubUrl: "https://github.com/AshwiniVapilkar",
+    liveDemoUrl: null,
+    uiPreviewType: "weather-preview"
+  },
+  {
+    id: "medical-imaging",
+    title: "Medical Imaging Disease Detection",
+    category: "Academic & Research",
+    type: "Academic Research Project",
+    isFeatured: false,
+    description: "An academic research project leveraging Computer Vision and Python to analyze medical image datasets for automated anomaly detection and preliminary diagnostic assistance.",
+    highlights: [
+      "Applied OpenCV pre-processing pipelines including noise reduction, histogram equalization, and edge detection.",
+      "Evaluated machine learning classification models on standardized medical imaging benchmarks."
+    ],
+    stack: ["Python", "OpenCV", "Computer Vision", "Pandas", "NumPy"],
+    githubUrl: "https://github.com/AshwiniVapilkar/medical-imaging-disease-detection",
+    liveDemoUrl: null,
+    uiPreviewType: "medical-preview"
+  },
+  {
+    id: "flight-price-prediction",
+    title: "Flight Price Prediction System",
+    category: "Academic & Research",
+    type: "Academic Research Project",
+    isFeatured: false,
+    description: "A machine learning data analytics system designed to predict airline ticket prices based on historical flight parameters, airline operators, routes, and seasonal timing.",
+    highlights: [
+      "Engineered feature extraction pipelines for departure times, layovers, and carrier variables.",
+      "Performed exploratory data analysis and model performance comparison using Pandas and NumPy."
+    ],
+    stack: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-Learn"],
+    githubUrl: "https://github.com/AshwiniVapilkar/flight-price-prediction-system",
+    liveDemoUrl: null,
+    uiPreviewType: "flight-preview"
+  }
+];
+---
+
+<section id="projects" class="py-16 md:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title & Filter Tabs -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="space-y-2">
+        <span class="text-xs font-mono-code tracking-wider uppercase text-sky-600 dark:text-sky-400 font-semibold">
+          04 / Featured Projects
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-primary)]">
+          Selected work & technical case studies.
+        </h2>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap gap-2 font-mono-code text-xs">
+        <button class="project-filter-btn active px-3 py-1.5 rounded-lg bg-sky-600 text-white transition-all shadow-sm" data-filter="all">
+          All Projects ({projects.length})
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg bg-[var(--bg-card)] text-[var(--text-secondary)] border border-[var(--border-color)] hover:text-sky-500 transition-all" data-filter="Full-Stack & AI">
+          Full-Stack & Web
+        </button>
+        <button class="project-filter-btn px-3 py-1.5 rounded-lg bg-[var(--bg-card)] text-[var(--text-secondary)] border border-[var(--border-color)] hover:text-sky-500 transition-all" data-filter="Academic & Research">
+          Academic Research
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Container -->
+    <div class="space-y-12">
+      {projects.map((project) => (
+        <article
+          class={`project-card rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] overflow-hidden transition-all duration-300 ${
+            project.isFeatured ? 'ring-1 ring-sky-500/30 shadow-lg' : ''
+          }`}
+          data-category={project.category}
+        >
+          {project.isFeatured ? (
+            /* Large Featured Case Study Layout */
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              
+              <!-- Left Specs & Case Study Description -->
+              <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
+                <div>
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="px-2.5 py-1 text-[11px] font-mono-code font-bold uppercase tracking-wider rounded-md bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+                      ★ Featured Case Study
+                    </span>
+                    <span class="px-2 py-0.5 text-[11px] font-mono-code text-[var(--text-muted)] border border-[var(--border-subtle)] rounded">
+                      {project.type}
+                    </span>
+                  </div>
+
+                  <h3 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight mb-3">
+                    {project.title}
+                  </h3>
+
+                  <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  <!-- Highlights List -->
+                  <div class="space-y-2 mb-6">
+                    <span class="text-xs font-mono-code text-[var(--text-muted)] uppercase tracking-wider block font-semibold">
+                      Technical Highlights:
+                    </span>
+                    <ul class="space-y-1.5 text-xs text-[var(--text-secondary)]">
+                      {project.highlights.map((item) => (
+                        <li class="flex items-start gap-2">
+                          <span class="text-sky-500 font-bold">›</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <!-- Tech Tags -->
+                  <div class="flex flex-wrap gap-2 pt-2">
+                    {project.stack.map((tech) => (
+                      <span class="px-2.5 py-1 text-xs font-mono-code rounded-md bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[var(--border-subtle)]">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- Footer CTAs -->
+                <div class="pt-6 border-t border-[var(--border-subtle)] flex items-center gap-4">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-mono-code font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 rounded-lg shadow-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                  >
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>View GitHub Repository</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Handcrafted Live UI Mock Graphic -->
+              <div class="lg:col-span-5 bg-slate-950 p-6 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[var(--border-color)]">
+                <div class="w-full max-w-md rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3 font-mono-code text-xs text-slate-200">
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    </div>
+                    <span class="text-[10px] text-sky-400">Gemini AI Stream</span>
+                  </div>
+
+                  <div class="p-3 rounded bg-slate-950/80 border border-slate-800 space-y-2">
+                    <div class="text-[11px] text-slate-400 flex justify-between">
+                      <span>Prompt: Optimize Summary</span>
+                      <span class="text-emerald-400">200 OK</span>
+                    </div>
+                    <div class="text-xs text-slate-300 leading-normal bg-sky-950/30 p-2 rounded border border-sky-500/20">
+                      "Frontend Developer with expertise in React.js, component architecture, and responsive UI engineering..."
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-2 text-[11px]">
+                    <div class="p-2 rounded bg-slate-950/60 border border-slate-800">
+                      <span class="text-slate-500 block text-[10px]">Auth state</span>
+                      <span class="text-emerald-400">Clerk Signed-In ✓</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-950/60 border border-slate-800">
+                      <span class="text-slate-500 block text-[10px]">CMS Sync</span>
+                      <span class="text-sky-400">Strapi V4 Connected</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          ) : (
+            /* Standard Alternate Layout for Weather App & Academic Projects */
+            <div class="p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-[11px] font-mono-code text-[var(--text-muted)] border border-[var(--border-subtle)] rounded">
+                      {project.type}
+                    </span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-mono-code text-sky-600 dark:text-sky-400 hover:underline shrink-0"
+                >
+                  <span>Source Code</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+
+              <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+                {project.description}
+              </p>
+
+              <!-- Technical Highlights -->
+              <div class="space-y-1.5 mb-6 text-xs text-[var(--text-secondary)]">
+                {project.highlights.map((item) => (
+                  <div class="flex items-start gap-2">
+                    <span class="text-sky-500 font-bold">›</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-[var(--border-subtle)]">
+                {project.stack.map((tech) => (
+                  <span class="px-2.5 py-0.5 text-xs font-mono-code rounded bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[var(--border-subtle)]">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Filter Tabs Logic
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove('active', 'bg-sky-600', 'text-white');
+        b.classList.add('bg-[var(--bg-card)]', 'text-[var(--text-secondary)]');
+      });
+
+      btn.classList.add('active', 'bg-sky-600', 'text-white');
+      btn.classList.remove('bg-[var(--bg-card)]', 'text-[var(--text-secondary)]');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          (card as HTMLElement).style.display = 'block';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

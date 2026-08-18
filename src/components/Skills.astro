@@ -1,0 +1,119 @@
+---
+const skillCategories = [
+  {
+    category: "Frontend Core",
+    description: "Building responsive, modern, and high-performance client-side interfaces.",
+    spotlight: true,
+    skills: [
+      { name: "React.js", level: "Primary" },
+      { name: "JavaScript (ES6+)", level: "Primary" },
+      { name: "Tailwind CSS", level: "Primary" },
+      { name: "Vite", level: "Core" },
+      { name: "HTML5", level: "Core" },
+      { name: "CSS3", level: "Core" },
+      { name: "Bootstrap", level: "Core" },
+      { name: "jQuery", level: "Proficient" }
+    ]
+  },
+  {
+    category: "Development & UI Practices",
+    description: "Methodologies and standards for production software.",
+    spotlight: false,
+    skills: [
+      { name: "Responsive UI Design", level: "Core" },
+      { name: "Figma-to-UI Conversion", level: "Core" },
+      { name: "Cross-Browser Compatibility", level: "Core" },
+      { name: "Full-Stack Web Applications", level: "Practical" }
+    ]
+  },
+  {
+    category: "Backend & API Integration",
+    description: "Connecting frontend views with APIs and content management.",
+    spotlight: false,
+    skills: [
+      { name: "REST API Integration", level: "Core" },
+      { name: "Strapi CMS", level: "Practical" },
+      { name: "Clerk Authentication", level: "Practical" }
+    ]
+  },
+  {
+    category: "AI & Data Science",
+    description: "Academic & research experience in machine learning and computer vision.",
+    spotlight: false,
+    skills: [
+      { name: "Python", level: "Proficient" },
+      { name: "Gemini AI API", level: "Practical" },
+      { name: "OpenCV", level: "Research" },
+      { name: "Computer Vision", level: "Research" },
+      { name: "Pandas", level: "Research" },
+      { name: "NumPy", level: "Research" }
+    ]
+  },
+  {
+    category: "Developer Tools",
+    description: "Version control and collaborative workflow tools.",
+    spotlight: false,
+    skills: [
+      { name: "Git", level: "Daily" },
+      { name: "GitHub", level: "Daily" }
+    ]
+  }
+];
+---
+
+<section id="skills" class="py-16 md:py-24 border-b border-[var(--border-subtle)]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col space-y-2 mb-12">
+      <span class="text-xs font-mono-code tracking-wider uppercase text-sky-600 dark:text-sky-400 font-semibold">
+        03 / Skills & Capabilities
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-primary)]">
+        Structured technical stack & development competencies.
+      </h2>
+    </div>
+
+    <!-- Asymmetric Skills Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((group) => (
+        <div class={`p-6 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-sky-500/30 transition-all duration-200 flex flex-col justify-between ${
+          group.spotlight ? 'md:col-span-2 lg:col-span-2 ring-1 ring-sky-500/20' : ''
+        }`}>
+          <div>
+            <!-- Group Header -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-[var(--border-subtle)]">
+              <h3 class="font-bold text-lg text-[var(--text-primary)] flex items-center gap-2">
+                {group.category}
+                {group.spotlight && (
+                  <span class="px-2 py-0.5 text-[10px] font-mono-code font-semibold uppercase bg-sky-500/10 text-sky-600 dark:text-sky-400 rounded">
+                    Core Specialization
+                  </span>
+                )}
+              </h3>
+              <span class="text-xs font-mono-code text-[var(--text-muted)]">
+                {group.skills.length} skills
+              </span>
+            </div>
+
+            <p class="text-xs text-[var(--text-secondary)] mb-5">
+              {group.description}
+            </p>
+
+            <!-- Tags Grid -->
+            <div class="flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <div class="px-3 py-1.5 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-subtle)] hover:border-sky-500/40 text-xs font-mono-code flex items-center gap-2 group/tag transition-colors">
+                  <span class="text-[var(--text-primary)] font-medium">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

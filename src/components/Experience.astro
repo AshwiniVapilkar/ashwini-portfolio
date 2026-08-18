@@ -1,0 +1,120 @@
+---
+const experiences = [
+  {
+    company: "Techsevin Solution LLP",
+    role: "Frontend Developer",
+    period: "June 2024 – Present",
+    type: "Full-Time",
+    location: "Mumbai, India",
+    current: true,
+    responsibilities: [
+      "Developing responsive web applications using React.js, JavaScript (ES6+), Tailwind CSS, and Bootstrap.",
+      "Converting complex Figma designs into responsive, clean, and reusable component interfaces.",
+      "Ensuring optimal usability, web accessibility, and cross-browser compatibility across mobile and desktop devices.",
+      "Customizing, extending, and enhancing WordPress and Magento websites to satisfy client requirements."
+    ],
+    technologies: ["React.js", "JavaScript ES6+", "Tailwind CSS", "Bootstrap", "Figma to Code", "WordPress", "Magento"]
+  },
+  {
+    company: "Ambab Infotech Pvt. Ltd.",
+    role: "Frontend Developer Intern",
+    period: "March 2024 – May 2024",
+    type: "Internship",
+    location: "Mumbai, India",
+    current: false,
+    responsibilities: [
+      "Built responsive webpage layouts and interactive UI components utilizing standard HTML5, CSS3, JavaScript, and jQuery.",
+      "Developed an Amazon homepage replica featuring responsive navigation, product cards, and dynamic UI interactions.",
+      "Collaborated with senior developers on testing cross-device performance and optimizing DOM manipulation scripts."
+    ],
+    technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Responsive Design", "UI Components"]
+  }
+];
+---
+
+<section id="experience" class="py-16 md:py-24 border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)]/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title -->
+    <div class="flex flex-col space-y-2 mb-14">
+      <span class="text-xs font-mono-code tracking-wider uppercase text-sky-600 dark:text-sky-400 font-semibold">
+        02 / Professional Experience
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text-primary)]">
+        Industry experience building production frontend interfaces.
+      </h2>
+    </div>
+
+    <!-- Editorial Timeline -->
+    <div class="relative border-l-2 border-[var(--border-color)] ml-3 sm:ml-6 pl-6 sm:pl-10 space-y-12">
+      {experiences.map((exp, idx) => (
+        <div class="relative group">
+          <!-- Timeline Node Circle -->
+          <div class={`absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 bg-[var(--bg-primary)] ${
+            exp.current
+              ? 'border-sky-500 ring-4 ring-sky-500/20'
+              : 'border-[var(--text-muted)]'
+          }`}>
+            {exp.current && <span class="block w-1.5 h-1.5 rounded-full bg-sky-500 mx-auto my-[3px]"></span>}
+          </div>
+
+          <!-- Timeline Content Card -->
+          <div class="p-6 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm hover:shadow-md transition-all duration-200">
+            
+            <!-- Header: Company & Date -->
+            <div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-[var(--border-subtle)]">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
+                    {exp.company}
+                  </h3>
+                  {exp.current && (
+                    <span class="px-2 py-0.5 text-[10px] font-mono-code font-semibold uppercase tracking-wider rounded bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+                      Current Role
+                    </span>
+                  )}
+                </div>
+                <p class="text-sm font-semibold text-sky-600 dark:text-sky-400 mt-0.5">
+                  {exp.role}
+                </p>
+              </div>
+
+              <div class="text-right font-mono-code text-xs">
+                <span class="px-3 py-1 rounded-md bg-[var(--badge-bg)] text-[var(--badge-text)] font-medium inline-block">
+                  {exp.period}
+                </span>
+                <p class="text-[var(--text-muted)] text-[11px] mt-1">
+                  {exp.location} • {exp.type}
+                </p>
+              </div>
+            </div>
+
+            <!-- Responsibilities Bullet Points -->
+            <ul class="space-y-2.5 mb-6 text-sm text-[var(--text-secondary)]">
+              {exp.responsibilities.map((resp) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-sky-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="leading-relaxed">{resp}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-[var(--border-subtle)]">
+              <span class="text-xs font-mono-code text-[var(--text-muted)] self-center mr-1">Stack:</span>
+              {exp.technologies.map((tech) => (
+                <span class="px-2.5 py-0.5 text-xs font-mono-code rounded bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[var(--border-subtle)]">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#090D16"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#111726" stroke="#1E293B" stroke-width="2"/>
+  <rect x="80" y="80" width="60" height="60" rx="16" fill="rgba(56,189,248,0.1)" stroke="#38BDF8" stroke-width="2"/>
+  <text x="110" y="122" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#38BDF8" text-anchor="middle">AV</text>
+  <text x="80" y="240" font-family="system-ui, sans-serif" font-size="56" font-weight="800" fill="#F8FAFC">Ashwini Vapilkar</text>
+  <text x="80" y="300" font-family="system-ui, sans-serif" font-size="32" font-weight="600" fill="#38BDF8">Frontend Developer</text>
+  <text x="80" y="370" font-family="system-ui, sans-serif" font-size="24" fill="#94A3B8">React.js • JavaScript ES6+ • Tailwind CSS • Responsive UI Engineering</text>
+  <text x="80" y="510" font-family="system-ui, sans-serif" font-size="20" fill="#64748B">ashwinivapilkar.dev</text>
+</svg>

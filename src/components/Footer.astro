@@ -1,0 +1,38 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-8 border-t border-[var(--border-subtle)] bg-[var(--bg-primary)]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-code text-xs text-[var(--text-muted)]">
+    
+    <!-- Left Info -->
+    <div class="flex items-center gap-3">
+      <span class="font-bold text-[var(--text-primary)]">Ashwini Vapilkar</span>
+      <span>•</span>
+      <span>Frontend Developer</span>
+    </div>
+
+    <!-- Center Links -->
+    <div class="flex items-center gap-4">
+      <a href="https://github.com/AshwiniVapilkar" target="_blank" rel="noopener noreferrer" class="hover:text-sky-500 transition-colors">GitHub</a>
+      <a href="https://www.linkedin.com/in/ashwini-vapilkar-3978b7290/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-500 transition-colors">LinkedIn</a>
+      <a href="mailto:vapilkarashwini3@gmail.com" class="hover:text-sky-500 transition-colors">Email</a>
+    </div>
+
+    <!-- Right Back to Top -->
+    <div class="flex items-center gap-4">
+      <span>© {currentYear} Ashwini Vapilkar</span>
+      <a
+        href="#"
+        class="p-1.5 rounded-md hover:bg-[var(--bg-secondary)] hover:text-sky-500 transition-colors"
+        aria-label="Back to Top"
+        title="Back to Top"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</footer>
